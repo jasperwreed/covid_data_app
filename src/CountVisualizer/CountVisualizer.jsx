@@ -5,7 +5,7 @@ import './CountVisualizer.css'
 
 const CountVisualizer = () => {
   const [positiveCount, setPositiveCount] = useState(0);
-  const [caseDate, setCaseDate] = useState('')
+  const [caseDate, setCaseDate] = useState(0)
 
   useEffect(() => {
     covidAPI();
@@ -17,6 +17,7 @@ const CountVisualizer = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setCaseDate(data[0].dateChecked)
         setPositiveCount(data[0].positive);
       });
   };
@@ -25,7 +26,7 @@ const CountVisualizer = () => {
     <>
       <div className='centerDiv'>
         <h1 className='lgr-text'>{numberFormater("#,###." ,positiveCount)}</h1>
-        <p>Cumulative positive cases of covid as of `date`</p>
+        <p>Cumulative positive cases of covid as of {dateformat(caseDate, "dddd, mmmm dS, yyyy")} (US)</p>
       </div>
     </>
   );
