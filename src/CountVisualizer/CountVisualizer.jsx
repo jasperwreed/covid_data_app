@@ -16,7 +16,6 @@ const CountVisualizer = () => {
     const data = await fetch(currentDataUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setCaseDate(data[0].dateChecked)
         setPositiveCount(data[0].positive);
       });
