@@ -1,7 +1,9 @@
+import CountVisualizer from './CountVisualizer/CountVisualizer'
+
 function App() {
   return (
     <div className="App">
-      <h1>Counter Goes Here</h1>
+      <CountVisualizer />
     </div>
   );
 }
