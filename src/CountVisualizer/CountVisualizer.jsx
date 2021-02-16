@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import numberFormater from 'number-formatter'
+import dateformat from 'dateformat'
 import './CountVisualizer.css'
 
 const CountVisualizer = () => {
   const [positiveCount, setPositiveCount] = useState(0);
+  const [caseDate, setCaseDate] = useState('')
 
   useEffect(() => {
     covidAPI();
@@ -21,7 +24,8 @@ const CountVisualizer = () => {
   return (
     <>
       <div className='centerDiv'>
-        <h1 className='lgr-text'>{positiveCount}</h1>
+        <h1 className='lgr-text'>{numberFormater("#,###." ,positiveCount)}</h1>
+        <p>Cumulative positive cases of covid as of `date`</p>
       </div>
     </>
   );

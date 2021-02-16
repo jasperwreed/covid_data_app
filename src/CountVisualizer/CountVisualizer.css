@@ -1,6 +1,7 @@
 body {
   background-color: #2e2e2d;
-  font-family: 'IBM Plex Serif', serif;
+  font-family: 'B612', sans-serif;
+  font-weight: bold;
 }
 
 p, h1,h2, h3,h4 {
@@ -8,14 +9,21 @@ p, h1,h2, h3,h4 {
 }
 
 .lgr-text {
-  font-size: 300px;
+  font-size: 15vw;
 }
 
 .centerDiv {
   margin: auto;
+  width: 100%;
+  display: inline-block;
 }
 
 @font-face {
   font-family: 'IBM Plex Serif', serif;
   src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@100&display=swap')
+}
+
+@font-face {
+  font-family: 'B612', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=B612:wght@700&display=swap')
 }
